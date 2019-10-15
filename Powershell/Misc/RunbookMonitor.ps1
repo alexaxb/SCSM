@@ -9,7 +9,7 @@ $SQLDatabase_SCO = 'Orchestrator'
 $SQLServer_LastCheck = ''
 $SQLDatabase_LastCheck = ''
 $Runbookname = ''
-$OrchestratorConsoleURL = 'http://vntapp0201:82'
+$OrchestratorConsoleURL = 'http://sco01:82'
 $IR_Title = 'Failed runbook'
 
 
