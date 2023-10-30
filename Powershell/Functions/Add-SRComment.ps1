@@ -12,10 +12,7 @@ Function Add-SRComment {
         [parameter(Mandatory=$False,Position=4)][switch]$IsPrivate
     )
 
-    # Make sure that the SR Object it passed to the function
-    If ($SRObject.Id -ne $NULL) {
-        
-
+    try{      
         If ($AnalystComment) {
             $CommentClass = "System.WorkItem.TroubleTicket.AnalystCommentLog"
             $CommentClassName = "AnalystCommentLog"
@@ -43,7 +40,8 @@ Function Add-SRComment {
 
         # Create the actual comment
         New-SCSMObjectProjection -Type "System.WorkItem.ServiceRequestProjection" -Projection $Projection
-    } else {
-        Throw "Invalid Service Request Object!"
+    }
+    catch{
+        Throw "Add-SRComment: $($_)"
     }
 }
